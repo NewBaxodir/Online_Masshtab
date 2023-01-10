@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static 'bosh_sahifa/css/style.css' %}">
+   <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   <title>Online Masshtab</title>
+</head>
+<body>
+   <div class="container">
+      <div class="header">
+         <div class="menyu">
+            <div class="mn_logo">
+               <img src="{% static 'bosh_sahifa/css/rasmlar/shuhrat.jpg' %}">
+               <p><span>O</span>nline<br><span>M</span>asshtab</p>
+            </div>
+         <div class="mn_qism">
+            <a href="#" class="">Home</a>
+            <a href="#" class="">Tanlov</a>
+            <a href="#" class="">Menyu</a>
+            <a href="#" class="">Registratsiya</a>
+            <a href="#" class="">Jamoa</a>
+            <a href="#" class="">Shaxsiy Kabinet</a>
+         </div>
+      </div>
+      <div class="mn_asos">
+         <div class="xabar">
+            <p>
+               Ushbu sayt ma'lumotlari ochiq bo'lib undan istalgan foydalanuvchi foydalanish huquqiga ega!
+               Saytda talaba o'quvchilar va boshqa foydalanuvchilar uchun referat, taqdimot(slayd), mustaqil ish, kurs ishi va boshqalar uchun ma'lumotlar berib boriladi.Amalga oshirilgan ushbu ishlar foydalanuvchilarning vaqtini tejash maqsadida rasmiy saytlardagi ma'lumotlar jamlanib fayl ko'rinishiga keltirilgan.
+            </p>
+         </div>
+         <div class="mavzular">
+            <div class="turlar">
+               {% for i in ktg %}
+               <a href="{% url 'turlar' i.pk %}">
+                  <div class="tur">
+                     <div class="tur_img"><img src="{% static 'bosh_sahifa/css/rasmlar/icon3.png' %}"></div>
+                     <div class="tur_tetx"> {{ i.name }} </div>
+                     <div class="tur_text"></div>
+                  </div>
+               </a>
+               {% endfor %}
+               <div class="yoriqnoma">
+                  <p>
+                     Ba'zi bir ma'tematik va fanga oid formulalarni veb brauzerlar qo'llab quvvatlay olmagani uchun sizga bir nechta na'munalar taqdim etildi. Kerakli bo'lgan ma'lumotlarni yuklab olish orqali undan to'liq foydalanishingiz mumkin.Ma'lumotlarni yuklab olish mutlaqo bepul.
+                  </p>
+               </div>
+            </div>
+            <div class="mavzu">
+               <div class="natija_search">
+                  <div class="natija">
+                     <div class="natija_matn">
+                        So'rov bo'yicha 2 ta fayl taqdim etildi.
+                     </div>
+                  </div>
+               </div>
+               <div class="theme">
+                  <div class="theme_aaa">
+                     {% for i in db %}
+                     <div class="natija">
+                        <div class="natija_attrib_one">
+                           <img src="{% static  'bosh_sahifa/css/rasmlar/icon4.png'%}">
+                           {{ i.name }}
+                        </div>
+                        <div class="download">
+                           <img src="{% static 'bosh_sahifa/css/rasmlar/icon5.png'%}" class="download_img">
+                        </div>
+                     </div>
+                     <div class="file_tetx">
+                        <p>
+                           {{ i.text }}
+                        </p>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </div>
+            <div class="bosh_search">
+               <div class="asos">
+         <div class="izlash">  
+            <form name="form" method='GET'>
+               <input class="form-control" name="search_input" id="myInput" type="text" placeholder="Search.." value="{{ search_i }}">
+               <input type='submit' value="Qidirish" style='display: none;'>
+            </form>
+            <br>
+            <table class="table table-bordered table-striped">
+               <thead class="search_thead">
+                  <tr>
+                     <th>N</th>
+                     <th>Mavzu</th>
+                     <th>Download</th>
+                  </tr>
+               </thead>
+               <tbody id="myTable">
+                  
+                  {% for i in db %}
+                  <tr class="search_attrib">
+                     <td>1</td>
+                     <td> {{ i.name }} </td>
+                     <td> <a href="{{ i.file.url }}">Ko'rish</a> </td>
+                  </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+            </div>
+         </div>
+      </div>
+      <div class="fanlar-menyu">
+         <ul class="fanlar-ul">
+
+            {% for i in fanlar %}
+            <li class="fanlar-li"><a href="{% url 'fanlar' i.pk %}" class="fanlar-a"> {{ i.name }} </a></li>
+            {% endfor %}
+         </ul>
+      </div>
+      <div class="oxirgi_qism">
+         <div class="oxirgi_qism_blok"> 
+            <a href="" class="oxirgi_qism_a qism_blok_a">Umumiy qoidalar</a>
+            <a href="" class="oxirgi_qism_a qism_blok_a">Yordam</a>
+            <a href="" class="oxirgi_qism_a qism_blok_a">Ma'muriyat</a>
+            <p class="oxirgi_qism_a">Ma'lumotlar foydalanuvchilar uchun bepul!</p>
+         </div>
+         <div class="oxirgi_qism_blok"> 
+            <div class="ijtimoit_tarmoq">
+               <img src="{% static 'bosh_sahifa/css/rasmlar/telegram.svg'%}" class="ij_tarmoq_img">
+               <img src="{% static 'bosh_sahifa/css/rasmlar/instagram.svg'%}" class="ij_tarmoq_img">
+               <img src="{% static 'bosh_sahifa/css/rasmlar/youtube.svg'%}" class="ij_tarmoq_img">
+               <img src="{% static 'bosh_sahifa/css/rasmlar/facebook.png'%}" class="ij_tarmoq_img">
+            </div>
+            <div class="Reklama">
+               <p>Reklama uchun<br><span>+998904564321</span><br><br>Reklama bermoqchi bo'lgan foydalanuvchilar yuqorida telefon raqamlarga murojaat qilishlari mumkin.</p>
+            </div>
+         </div>
+         <div class="oxirgi_qism_blok"> 
+            <img src="{% static 'bosh_sahifa/css/rasmlar/shuhrat.jpg'%}" class="shaxsiy_rasm">
+            <div class="yaratuvchi">Yaratuvchi: Shuhrat.M.B</div>
+            <a href="https://t.me/shuhrat13"><div>Bog'lanish:<span>@shuhrat13</span></div></a>
+         </div>
+      </div>
+      <div class="Mualliflik">
+         <p>"Online Masshtab" veb saytining ma'lumotlar ba'zasi mualliflik huquqi bilan himoyalangan.Taklif va shikoytalar uchun <a href="https://t.me/shuhrat13">@shuhrat13</a> bilan bog'laning.</p>
+      </div>
+   </div>
+   <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</script>
+</body>

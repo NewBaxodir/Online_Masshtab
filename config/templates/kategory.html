@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static "turlar/css/style.css"%}">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   <title>Turlar</title>
+</head>
+<body>
+   <div class="container">
+      <div class="asos">
+         <div class="izlash">  
+            <input class="form-control" name="search_input" id="myInput" type="text" placeholder="Search..">
+            <br>
+            <table class="table table-bordered table-striped">
+               <thead class="search_thead">
+                  <tr>
+                     <th>N</th>
+                     <th>Mavzu</th>
+                     <th>Shakli</th>
+                     <th>Download</th>
+                  </tr>
+               </thead>
+               <tbody id="myTable">
+                    
+                    {% for i in data %}
+                    <tr class="search_attrib">
+                        <td>1</td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.category }}</td>
+                        <td> <a href='{{ i.file.url }}'>Ko'rish</a> </td>
+                     </tr>
+                    {% endfor %}
+               </tbody>
+            </table>
+         </div>
+         <div class="fan_tanlov">
+            <div class="theme_table">
+                {% for i in ktg %}
+                <a href="{% url 'turlar' i.pk %}"><div class="theme_attrib Kategoriyalar">{{ i.name }}</div></a>
+                {% endfor %}
+                </div>
+         </div>
+      </div>
+      <div class="oxirgi_qism">
+         <div class="oxirgi_qism_blok"> 
+            <a href="#" class="oxirgi_qism_a qism_blok_a">Umumiy qoidalar</a>
+            <a href="#" class="oxirgi_qism_a qism_blok_a">Yordam</a>
+            <a href="#" class="oxirgi_qism_a qism_blok_a">Ma'muriyat</a>
+            <p class="oxirgi_qism_a">Ma'lumotlar foydalanuvchilar uchun bepul!</p>
+         </div>
+         <div class="oxirgi_qism_blok"> 
+            <div class="ijtimoit_tarmoq">
+               <img src="{% static 'turlar/css/rasmlar/telegram.svg'%}" class="ij_tarmoq_img">
+               <img src="{% static 'turlar/css/rasmlar/instagram.svg'%}" class="ij_tarmoq_img">
+               <img src="{% static 'turlar/css/rasmlar/youtube.svg'%}" class="ij_tarmoq_img">
+               <img src="{% static 'turlar/css/rasmlar/facebook.png'%}" class="ij_tarmoq_img">
+            </div>
+            <div class="Reklama">
+               <p>Reklama uchun<br><span>+998904564321</span><br><br>Reklama bermoqchi bo'lgan foydalanuvchilar yuqorida telefon raqamlarga murojaat qilishlari mumkin.</p>
+            </div>
+         </div>
+         <div class="oxirgi_qism_blok"> 
+            <img src="{% static 'turlar/css/rasmlar/shuhrat.jpg'%}" class="shaxsiy_rasm">
+            <div class="yaratuvchi">Yaratuvchi: Shuhrat.M.B</div>
+            <a href="https://t.me/shuhrat13"><div>Bog'lanish:<span>@shuhrat13</span></div></a>
+         </div>
+      </div>
+      <div class="Mualliflik">
+         <p>"Online Masshtab" veb saytining ma'lumotlar ba'zasi mualliflik huquqi bilan himoyalangan.Taklif va shikoytalar uchun <a href="https://t.me/shuhrat13">@shuhrat13</a> bilan bog'laning.</p>
+      </div>
+   </div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+</script>
+</body>

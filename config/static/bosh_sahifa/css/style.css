@@ -1,0 +1,397 @@
+.container{
+	width: 1340px;
+	margin: 0px auto;
+
+}
+/* Header qasim uchun******************************************************* */
+.menyu{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 55px;
+	background: #000900;
+}
+.mn_logo{
+	width: 200px;
+	background: transparent;
+	display: flex;
+	justify-content: space-around;
+}
+.mn_logo img{
+	width: 50px;
+	height: 50px;
+	margin: 10px 0px 0px 0px;
+}
+.mn_logo p{
+	color: white;
+	font-family: sans-serif;
+	letter-spacing: 0.1em;
+	font-size: 14px;
+}
+.mn_logo p span{
+	color: red;
+	font-size: 18px;
+}
+.mn_qism{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 800px;
+	height: 90%;
+	background: transparent;
+	letter-spacing: 0.1em;
+}
+.mn_qism a {
+	font-family: sans-serif;
+	color: white;
+	text-decoration: none;
+}
+
+.mn_qism a:hover{
+	color: royalblue;
+	transition: 0.6s;
+}
+/*Sayt mazmuni haqida css *********************************************************/
+.xabar{
+	width: 93%;
+	height: fit-content;
+	border: 1px solid black;
+	margin: 20px 0px 30px 2.5rem;
+	color: white;
+	padding: 10px;
+	font-size: 20px;
+	background-color: #006666;
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+}
+.xabar p{
+	text-align: center;
+	align-items: center;
+}
+/*Mavzular uchu css ********************************************************************* */
+.mavzular{
+	width: 98%;
+	margin: 10px 0px 0px 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+.turlar{
+	width: 18%;
+	height: fit-content;
+	border: 1px solid black;
+	align-items: center;
+	text-align: center;
+}
+.turlar a{
+	text-decoration: none;
+	color: black;
+}
+.tur{
+	display: flex;
+	justify-content: space-between;
+	font-family: sans-serif;
+	background-color: #f2f2f2;
+	border-bottom: 0.1px solid black	;
+	border-left: 0px solid black;
+	border-right: 0px solid black;
+	width: 100%;
+	height: 35px;
+}
+.tur:hover{
+	background:  #ccccff;
+}
+.tur_img{
+	width: 20px;
+	margin-left: 5px;
+}
+.tur_tetx{
+	font-size: 18px;
+	margin-top: 7px;
+}
+.tur_number{
+	margin-top: 7px;
+}
+.tur div:nth-child(3){
+	margin-right: 15px;
+}
+
+.yoriqnoma{
+	width: 100%;
+	height: 324px;
+	background-color: #f2f2f2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-family: sans-serif;
+}
+
+/*Qidirish, natija va mavzular uchun css-********************************************/
+.mavzu{
+	width: 57%;
+	height: 720px;
+	background-color: #f2f2f2;
+	border: 1px solid black;
+}
+.theme{
+	height: 75.5%;
+}
+.theme_aaa{
+	height: 100%;
+}
+.natija_search{
+	margin: 10px 0px 18px 10px;
+		width: 97%;
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+}
+.natija{
+	width: 100%;
+	height: 40px;
+	background: white;
+	border: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: -20px;
+}
+.natija_matn{
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	font-family: system-ui;
+	background: #3366ff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.natija_attrib_one{
+	width: 98%;
+	height: 40px;
+	font-size: 18px;
+	font-family: system-ui;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	background: #99ffcc;
+	cursor: pointer;
+}
+.natija_attrib_one img{
+	width: 30px;
+	height: 30px;
+}
+.download{
+	width: 40px;
+	height: 40px;
+	background:  #3366ff;
+	border: 1px solid black;
+	cursor: pointer;
+}
+.download_img{
+	width: 35px;
+	height: 35px;
+}
+.file_tetx{
+	height: 52.2%;
+	background: #f2f2f2;
+	padding: 10px;
+}
+
+/*Attrib mavzulari uchun css **********************************************/
+.bosh_search{
+	width: 25%;
+	height: 722px;
+	background: ;
+}
+.izlash{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-control{
+  width: 90%;
+  height: 35px;
+  margin-top: 10px;
+  background: white;
+}
+.search_attrib{
+  cursor: pointer;
+}
+.search_attrib:hover{
+  background: #00bcd4;
+}
+table, th, td{
+  border: 1px solid #005277;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 17px;
+}
+
+th{
+	background: #00bcd4;
+    color: white;
+    box-sizing: border-box;
+}
+tr th:nth-child(1){
+  width: 5%;
+  text-align: center;
+  background: #03707d;
+}
+tr th:nth-child(2){
+  width: 70%;
+}
+tr th:nth-child(3){
+  width: 10%;
+}
+tr td:nth-child(1){
+  background: #00bcd4;
+  color: white;
+  text-align: center;
+}
+table{
+  width: 100%;
+  background: white;
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.5);
+  border-bottom: 4px solid red;
+
+}
+
+/*Fanlar menyusi uchun *****************************************************************/
+.fanlar-menyu{
+	width: 96%;
+	height: fit-content;
+	padding: 5px;
+}
+.fanlar-ul{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.fanlar-li{
+	width: 24.5%;
+	height: 30px;
+	background: #c2c2c2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5px;
+}
+.fanlar-li:hover{
+	background: #f2f2f2;
+}
+.fanlar-a{
+	text-decoration: none;
+	font-family: system-ui;
+	color: black;
+}
+/*Oxirgi yakunlovchi qism uchun css **************************************************/
+.oxirgi_qism_a{
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 20px;
+	color: white;
+}
+.qism_blok_a{
+	color: #0066ff;
+}
+
+.oxirgi_qism{
+	width: 100%;
+	height: 300px;
+	background: #000000;
+	text-align: center;
+	display: flex;
+	justify-content: space-around;
+}
+.oxirgi_qism_blok{
+	width: 250px;
+	height: 290px;
+	border-radius: 10px;
+	margin-top: 10px;
+	align-items: center;
+}
+.ijtimoit_tarmoq{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+.ij_tarmoq_img{
+	width: 30px;
+	height: 30px;
+}
+.Reklama{
+	width: 100%;
+	height: 50px;
+	font-size: 20px;
+	color: white;
+	font-family: sans-serif;
+}
+.Reklama span{
+	color:  #0066ff;
+}
+.shaxsiy_rasm{
+	width: 180px;
+	height: 230px;
+	border-radius: 10px;
+}
+.yaratuvchi{
+	width: 80%;
+	height: 35px;
+	font-size: 18px;
+	margin: 0px 0px 0px 20px;
+	color: white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	font-family: sans-serif;
+}
+.oxirgi_qism_blok a{
+	text-decoration: none;
+}
+.oxirgi_qism_blok a div{
+	width: 90%;
+	margin: 0px 0px 5px 20px;
+	color: white;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	font-family: sans-serif;
+}
+.oxirgi_qism_blok span{
+	color:  #0066ff;
+}
+
+.Mualliflik{
+	width: 100%;
+	height: fit-content;
+	
+	background: black;
+	color: white;
+	font-size: 15px;
+	font-family: monospace;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Mualliflik a{
+	color: blue;
+	text-decoration: none;
+}
+
+
+
